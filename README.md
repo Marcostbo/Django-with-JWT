@@ -1,5 +1,7 @@
 # JWT Authentication in Django Rest Framework
 
+This step-by-step guide seeks to present you an easy and reliable way to integrate JWT Authentication inside your Django application
+
 ## How JWT works?
 
 ## Step by step
