@@ -2,6 +2,8 @@
 
 ## How JWT works?
 
+## Step by step
+
 ### Step 0: Set up Django
 
 ```console
@@ -90,4 +92,12 @@ class User(AbstractUser):
 
 ### Step 2: Set up Django API REST
 
+```
+python -m pip install djangorestframework
+```
+
 ### Step 3: Set up JWT Authentication
+
+```
+python -m pip install djangorestframework-simplejwt
+```
