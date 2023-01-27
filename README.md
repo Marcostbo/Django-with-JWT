@@ -92,7 +92,7 @@ class User(AbstractUser):
         return self.email
 ```
 admin.py
-```
+```python
 from django.contrib import admin
 from .models import User
 
@@ -102,12 +102,12 @@ admin.site.register(User)
 
 ### Step 2: Set up Django API REST
 
-```
+```console
 python -m pip install djangorestframework
 ```
 
 ### Step 3: Set up JWT Authentication
 
-```
+```console
 python -m pip install djangorestframework-simplejwt
 ```
