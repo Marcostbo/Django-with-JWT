@@ -91,6 +91,14 @@ class User(AbstractUser):
     def __str__(self):
         return self.email
 ```
+admin.py
+```
+from django.contrib import admin
+from .models import User
+
+admin.site.register(User)
+
+```
 
 ### Step 2: Set up Django API REST
 
