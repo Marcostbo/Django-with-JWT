@@ -7,16 +7,16 @@
 ```console
 python -m pip install Django
 ```
-```
+```console
 django-admin startproject djangojwt
 ```
-```
+```console
 python manage.py startapp djangojwtapp
 ```
 
 ### Step 1: Create models
 
-```
+```python
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from djangojwtapp.managers import CustomUserManager
