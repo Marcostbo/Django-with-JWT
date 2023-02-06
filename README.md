@@ -10,9 +10,13 @@ Check Simple JWT documentation for more info: https://django-rest-framework-simp
 
 ### Step 0: Set up Django
 
+First, we need to install Django in our Python environment
+
 ```console
 python -m pip install Django
 ```
+After that, create the new project and the new app
+
 ```console
 django-admin startproject djangojwt
 ```
