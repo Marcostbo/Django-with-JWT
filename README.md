@@ -99,8 +99,7 @@ class CustomUserManager(BaseUserManager):
         return self.create_user(email, password, **extra_fields)
 
 ```
-
-admin.py
+Finally, in the admin.py file, we register a new section in Admin to help us read and change all the users in User table
 ```python
 from django.contrib import admin
 from .models import User
