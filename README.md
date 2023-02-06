@@ -6,6 +6,14 @@ Check Simple JWT documentation for more info: https://django-rest-framework-simp
 
 ## How JWT works?
 
+When it comes to API authentication and server-to-server authorization, JSON web token (JWT) is particularly a useful technology. In terms of Single Sign-On (SSO), it means that a service provider can receive trustworthy information from the authentication server. 
+
+By sharing a secret key with the Identity Provider, the Service Provider can hash a part of a token it receives and compare it to the signature of the token. Now, if that result matches the signature, the SP knows that the information provided has come from the other entity possessing the key.
+
+The following workflow explains the authentication flow:
+
+![image](https://user-images.githubusercontent.com/42622686/217071712-d89314b2-4cb6-48b3-b414-6a473aa7e1f9.png)
+
 ## Step by step
 
 ### Step 0: Set up Django
