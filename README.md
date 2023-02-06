@@ -26,7 +26,42 @@ python manage.py startapp djangojwtapp
 
 ### Step 1: Create models
 
-managers.py
+It is now possible to create and manipulate API models. The first model to be created is User, inheriting from AbstractUser, which is an abstract model provided by Django.
+
+It is interesting to set the Username to null and use the email as the unique key, so the User model in models.py is built as follows:
+```python
+from django.db import models
+from django.contrib.auth.models import AbstractUser
+from djangojwtapp.managers import CustomUserManager
+
+
+class User(AbstractUser):
+    username = None
+
+    name = models.CharField(max_length=100)
+    email = models.EmailField(max_length=100, unique=True)
+    date_joined = models.DateTimeField(auto_now_add=True)
+    is_admin = models.BooleanField(default=False)
+    is_active = models.BooleanField(default=True)
+    is_staff = models.BooleanField(default=False)
+    is_superuser = models.BooleanField(default=False)
+
+    objects = CustomUserManager()
+
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = ['name']
+
+    class Meta:
+        app_label = 'djangojwtapp'
+        verbose_name = 'User'
+        verbose_name_plural = 'Users'
+
+    def __str__(self):
+        return self.email
+```
+
+We create a CustomUserManager inside managers.py (new file!) to handle all User creation:
+
 ```python
 from django.contrib.auth.base_user import BaseUserManager
 from django.utils.translation import gettext_lazy as _
@@ -65,38 +100,6 @@ class CustomUserManager(BaseUserManager):
 
 ```
 
-
-models.py
-```python
-from django.db import models
-from django.contrib.auth.models import AbstractUser
-from djangojwtapp.managers import CustomUserManager
-
-
-class User(AbstractUser):
-    username = None
-
-    name = models.CharField(max_length=100)
-    email = models.EmailField(max_length=100, unique=True)
-    date_joined = models.DateTimeField(auto_now_add=True)
-    is_admin = models.BooleanField(default=False)
-    is_active = models.BooleanField(default=True)
-    is_staff = models.BooleanField(default=False)
-    is_superuser = models.BooleanField(default=False)
-
-    objects = CustomUserManager()
-
-    USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['name']
-
-    class Meta:
-        app_label = 'djangojwtapp'
-        verbose_name = 'User'
-        verbose_name_plural = 'Users'
-
-    def __str__(self):
-        return self.email
-```
 admin.py
 ```python
 from django.contrib import admin
