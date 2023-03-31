@@ -2,7 +2,7 @@
 
 This step-by-step guide seeks to present you an easy and reliable way to integrate JWT Authentication inside your Django application
 
-Check Simple JWT documentation for more info: https://django-rest-framework-simplejwt.readthedocs.io/en/latest/ 
+Check the Simple JWT documentation for more info: https://django-rest-framework-simplejwt.readthedocs.io/en/latest/ 
 
 ## How JWT works?
 
