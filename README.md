@@ -16,7 +16,7 @@ The following workflow explains the authentication flow:
 
 Usually the JWT follow this steps:
 
-- User sign-in using username and password.
+- User sign-in using username and password;
 - The authentication server verifies the credentials and issues a JWT signed using a private key.
 - Moving forward, the client will use the JWT to access protected resources by passing the JWT in the HTTP Authorization header.
 - The resource server then verifies the authenticity of the token using the public key.
