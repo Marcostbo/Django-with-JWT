@@ -17,9 +17,9 @@ The following workflow explains the authentication flow:
 Usually the JWT follow this steps:
 
 - User sign-in using username and password;
-- The authentication server verifies the credentials and issues a JWT signed using a private key.
-- Moving forward, the client will use the JWT to access protected resources by passing the JWT in the HTTP Authorization header.
-- The resource server then verifies the authenticity of the token using the public key.
+- The authentication server verifies the credentials and issues a JWT signed using a private key;
+- Moving forward, the client will use the JWT to access protected resources by passing the JWT in the HTTP Authorization header;
+- The resource server then verifies the authenticity of the token using the public key;
 - The Identity Provider generates a JWT certifying user identity, and the resource server decodes and verifies the authenticity of the token using the public key.
 
 Since the tokens are used for authorization and authentication in future requests and API calls great care must be taken to prevent security issues. These tokens shouldn’t be stored in publicly accessible areas like the browser’s local storage or cookies. In case there are no other choices, then the payload should be encrypted.
