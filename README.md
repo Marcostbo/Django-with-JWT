@@ -28,12 +28,12 @@ Since the tokens are used for authorization and authentication in future request
 
 ### Step 0: Set up Django
 
-First, we need to install Django in our Python environment
+First, we need to install Django in our Python environment:
 
 ```console
 python -m pip install Django
 ```
-After that, create the new project and the new app
+After that, create the new project and the new app:
 
 ```console
 django-admin startproject djangojwt
